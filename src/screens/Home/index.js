@@ -25,6 +25,7 @@ import {
   Tags,
   Service,
   FollowUs,
+  ProductCenterHorizontal,
 } from '../../component';
 import {
   IMAGE_CONTENT,
@@ -96,7 +97,7 @@ const Home = () => {
         <Collections />
         <Text style={styles.txtTitle}>{`Just for You`}</Text>
         <View style={styles.just}>
-          <ProductCenter />
+          <ProductCenterHorizontal />
         </View>
         <Image style={styles.indicator} source={IC_INDICATOR} />
         <Text style={styles.txtTitle}>{`@Trending`}</Text>

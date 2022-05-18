@@ -41,7 +41,6 @@ const Product = [
 ];
 const ProductCenterComp = ({
   textStyle = {},
-  numColumns = {},
 
 }) => {
   const Item = ({item, index}) => {
@@ -62,7 +61,7 @@ const ProductCenterComp = ({
       renderItem={Item}
       keyExtractor={(item, index) => `${item.id} ${index}`}
       contentContainerStyle={styles.FlatList}
-      numColumns={[2]}
+      numColumns={2}
     />
   );
 };
