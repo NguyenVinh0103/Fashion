@@ -43,10 +43,9 @@ const CollectionsComp = ({textStyle = {}}) => {
       </View>
       <View style={styles.bottomCollection}>
         <Image style = {styles.imageBottom} source={IMAGE_BOTTOMCOLLECTION} />
-        <View style = {styles.border}>
+        <TouchableOpacity style = {styles.border}>
             <Image style = {styles.iconPlay} source={IC_PLAY} />
-        </View>
-        
+        </TouchableOpacity>
       </View>
     </View>
   );

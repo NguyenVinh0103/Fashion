@@ -48,7 +48,7 @@ const Home = () => {
         hidden={false}
       />
       <Header />
-      <ScrollView>
+      <ScrollView style = {styles.scrollView}>
         <View>
           <Image style={styles.content} source={IMAGE_CONTENT} />
           <View style={styles.txt}>
@@ -72,10 +72,10 @@ const Home = () => {
           <Text style={styles.txtNav}>{`Bag`}</Text>
         </View>
         <ProductCenter />
-        <View style={styles.btnExplore}>
+        <TouchableOpacity style={styles.btnExplore}>
           <Text style={styles.txtExplore}>{`Explore More`}</Text>
           <Image source={IC_NEXT} style={styles.iconNext} />
-        </View>
+        </TouchableOpacity>
         <Image style={styles.border} source={IMAGE_BORDER} />
         {/* <ButtonSubmit/> */}
         {/* <Footer /> */}
@@ -149,6 +149,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+  },
+  scrollView:{
+    marginTop: normalize(10)
   },
   content: {
     width: '100%',

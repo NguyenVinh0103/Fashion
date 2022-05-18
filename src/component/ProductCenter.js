@@ -46,13 +46,13 @@ const ProductCenterComp = ({
 }) => {
   const Item = ({item, index}) => {
     return (
-      <View style={styles.product}>
+      <TouchableOpacity style={styles.product}>
         <Image style={styles.image} source={item.image} />
         <View style={styles.productChoose}>
           <Text style={styles.txtContent}>{item.content}</Text>
           <Text style={styles.txtMoney}>{item.money}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
