@@ -35,6 +35,10 @@ import {
   FollowUs,
   ProductCenterHorizontal,
   OnBoarding,
+  MaterialTabs,
+  Blog,
+  All,
+  TabBlog
 } from '../../component';
 import {
   IC_BOTTOMCONTENT,
@@ -90,7 +94,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar
+      {/* <StatusBar
         barStyle="dark-content"
         backgroundColor="#fff"
         hidden={false}
@@ -100,21 +104,14 @@ const Home = () => {
         <OnBoarding />
         <Text style={styles.txtTitle}>{`New Arrival`}</Text>
         <Image style={styles.border} source={IMAGE_BORDER} />
-        <View style={styles.nav}>
-          <Text style={styles.txtNav}>{`All`}</Text>
-          <Text style={styles.txtNav}>{`Apparel`}</Text>
-          <Text style={styles.txtNav}>{`Dress`}</Text>
-          <Text style={styles.txtNav}>{`Tshirt`}</Text>
-          <Text style={styles.txtNav}>{`Bag`}</Text>
-        </View>
-        <ProductCenter />
+        <MaterialTabs />
         <TouchableOpacity style={styles.btnExplore}>
           <Text style={styles.txtExplore}>{`Explore More`}</Text>
           <Image source={IC_NEXT} style={styles.iconNext} />
         </TouchableOpacity>
-        <Image style={styles.border} source={IMAGE_BORDER} />
+        <Image style={styles.border} source={IMAGE_BORDER} />  */}
         {/* <ButtonSubmit /> */}
-        <FlatList
+        {/* <FlatList
           data={Brand}
           renderItem={Item}
           keyExtractor={(item, index) => `${item.id} ${index}`}
@@ -154,13 +151,12 @@ const Home = () => {
           </View>
           <Image style={styles.border} source={IMAGE_BORDER} />
           <Service />
-          <Image style={styles.shit} source={IMAGE_SHIT} />
         </View>
-        <Text style={styles.txtTitle}>{`Follow Us`}</Text>
+        <Text style={styles.FollowUs}>{`Follow Us`}</Text>
         <Image style={styles.shit} source={IMAGE_SHIT} />
         <FollowUs />
         <Footer />
-      </ScrollView>
+      </ScrollView> */}
       {/* <ButtonBuyNow/> */}
       {/* <Cart/> */}
       {/* <ButtonSubmit/> */}
@@ -168,6 +164,8 @@ const Home = () => {
       {/* <ProductDefaul/> */}
       {/* <ProductContent/> */}
       {/* <ProductCenter/> */}
+      <Blog/>
+      
     </View>
   );
 };
@@ -192,6 +190,7 @@ const styles = StyleSheet.create({
     lineHeight: normalize(40),
     color: '#000',
     marginTop: normalize(-50),
+
   },
   txtCollections: {
     justifyContent: 'center',
@@ -236,6 +235,9 @@ const styles = StyleSheet.create({
     color: '#000',
     marginHorizontal: 20,
   },
+  just:{
+    marginTop: normalize(20)
+  },
   brand: {
     marginHorizontal: 20,
     alignSelf: 'center',
@@ -275,4 +277,14 @@ const styles = StyleSheet.create({
     width: '20%',
     aspectRatio: 1,
   },
+  FollowUs:{
+    marginTop:normalize(20),
+    justifyContent: 'center',
+    alignSelf: 'center',
+    fontWeight: '400',
+    letterSpacing: 8,
+    fontSize: fonts.FONT_SIZE_18,
+    lineHeight: normalize(40),
+    color: '#000',
+  }
 });

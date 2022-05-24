@@ -17,6 +17,8 @@ export const IC_BACK = require('./icons/Back.png')
 export const IC_NEXT = require('./icons/Next.png')
 export const IC_PLAY = require('./icons/Play.png')
 export const IC_INDICATOR = require('./icons/Indicator.png')
+export const IC_BOOKMARK = require('./icons/Bookmark.png')
+
 
 
 ///-------------- Images---------------///////
@@ -54,3 +56,11 @@ export const IC_FASHION = require('./images/Fashion.png')
 export const IMG_MAIN_MODEL = require('./images/mainModel.png')
 export const IC_ACCESSORIES = require('./images/Accessories.png')
 export const IC_AND = require('./images/&.png')
+
+export const IMAGE_ITEMBLOG1 = require('./images/itemBlog1.png')
+export const IMAGE_ITEMBLOG2 = require('./images/itemBlog2.png')
+export const IMAGE_ITEMBLOG3 = require('./images/itemBlog3.png')
+export const IMAGE_ITEMBLOG4 = require('./images/itemBlog4.png')
+
+
+

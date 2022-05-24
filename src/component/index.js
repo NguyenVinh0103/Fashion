@@ -17,4 +17,21 @@ export * from './ProductCenterHorizontal'
 export * from './OnBoarding'
 export * from './OnBoardingItem'
 export * from './Paginator'
+////
+export * from './MaterialTabs'
+export * from './All'
+export * from './Apparel'
+export * from './Bag'
+export * from './Dress'
+export * from './Tshirt'
+//////////
+export * from './Blog'
+
+export * from './TabBlog'
+export * from './Fashion'
+export * from './Promo'
+export * from './LookBook'
+export * from './Policy'
+export * from './Sa'
+
 // export * from './ProductSliderItems'

@@ -49,7 +49,6 @@ const FollowUsComp = ({textStyle = {}}) => {
         <LinearGradient colors={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 1)']}style = {styles.border}>
             <Text style={styles.txtContent}>{item.content}</Text>
         </LinearGradient>
-        
       </View>
     );
   };

@@ -1,19 +1,19 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {All} from './All';
-import {Apparel} from './Apparel';
-import {Dress} from './Dress';
-import {Tshirt} from './Tshirt';
-import {Bag} from './Bag';
+import {Fashion} from './Fashion';
+import {Promo} from './Promo';
+import {LookBook} from './LookBook';
+import {Policy} from './Policy';
+import {Sa} from './Sa';
 import {height, normalize} from '../helper';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import Home from '../screens/Home';
 
 const Tab = createMaterialTopTabNavigator();
 
-export const MaterialTabs = () => {
+export const TabBlog = () => {
   return (
-    <Tab.Navigator initialRouteName = {All}
+    <Tab.Navigator initialLayout={Home}
       screenOptions={{
         tabBarIndicatorStyle: {
           backgroundColor: 'transparent',
@@ -36,36 +36,36 @@ export const MaterialTabs = () => {
         },
       }}>
       <Tab.Screen
-        name="All"
-        component={All}
+        name="Fashion"
+        component={Fashion}
         options={{
-          tabBarLabel: 'All',
+          tabBarLabel: 'Fashion',
         }}
       />
       <Tab.Screen
-        name="Apparel"
-        component={Apparel}
+        name="Promo"
+        component={Promo}
         options={{
-          tabBarLabel: 'Apparel',
+          tabBarLabel: 'Promo',
         }}
       />
       <Tab.Screen
-        name="Dress"
-        component={Dress}
+        name="LookBook"
+        component={LookBook}
         options={{
-          tabBarLabel: 'Dress',
+          tabBarLabel: 'LookBook',
         }}
       />
       <Tab.Screen
-        name="Tshirt"
-        component={Tshirt}
+        name="Policy"
+        component={Policy}
         options={{
-          tabBarLabel: 'Tshirt',
+          tabBarLabel: 'Policy',
         }}
       />
       <Tab.Screen
-        name="Bag"
-        component={Bag}
+        name="Sa"
+        component={Sa}
         options={{
           tabBarLabel: 'Bag',
         }}

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Dress = () => {
+const PolicyComp = () => {
   return (
     <View>
       <Text>index</Text>
@@ -9,6 +9,6 @@ const Dress = () => {
   )
 }
 
-export default Dress
+export const Policy = React.memo(PolicyComp)
 
 const styles = StyleSheet.create({})

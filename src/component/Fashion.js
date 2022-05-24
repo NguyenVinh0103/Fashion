@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const Bag = () => {
+const FashionComp = () => {
   return (
     <View>
       <Text>index</Text>
@@ -9,6 +9,6 @@ const Bag = () => {
   )
 }
 
-export default Bag
+export const Fashion = React.memo(FashionComp)
 
 const styles = StyleSheet.create({})
