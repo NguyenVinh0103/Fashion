@@ -15,8 +15,6 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 const TagsComp = ({
     style = {}, 
     textStyle = {},
-    
-
 }) => {
   return (
     <TouchableOpacity style={[styles.btnTag, style]}>

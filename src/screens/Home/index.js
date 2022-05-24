@@ -6,14 +6,22 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  FlatList,
 } from 'react-native';
 import React from 'react';
-import {height, normalize, normalizeHorizontal, width} from '../../helper';
+import {
+  THEMES,
+  normalize,
+  normalizeHorizontal,
+  fonts,
+  height,
+} from '../../helper';
 import {useNavigation} from '@react-navigation/native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {
   Footer,
   Header,
+  ProductSlider,
   CartComponent,
   ButtonSubmit,
   ButtonBuyNow,
@@ -26,9 +34,9 @@ import {
   Service,
   FollowUs,
   ProductCenterHorizontal,
+  OnBoarding,
 } from '../../component';
 import {
-  IMAGE_CONTENT,
   IC_BOTTOMCONTENT,
   IMAGE_BORDER,
   IC_BACK,
@@ -36,11 +44,50 @@ import {
   IC_INDICATOR,
   IC_LOGO,
   IMAGE_SHIT,
+  IMAGE_CONTENT,
+  IC_PRADA,
+  IC_BURBERRY,
+  IC_BOSS,
+  IC_CARTIER,
+  IC_GUCCI,
+  IC_TIFFANY,
 } from '../../assets';
+
+const Brand = [
+  {
+    id: 1,
+    image: IC_PRADA,
+  },
+  {
+    id: 2,
+    image: IC_BURBERRY,
+  },
+  {
+    id: 3,
+    image: IC_BOSS,
+  },
+  {
+    id: 4,
+    image: IC_CARTIER,
+  },
+  {
+    id: 5,
+    image: IC_GUCCI,
+  },
+  {
+    id: 6,
+    image: IC_TIFFANY,
+  },
+];
 
 const Home = () => {
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
+
+  const Item = ({item, index}) => {
+    return <Image source={item.image} style={styles.brand} />;
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar
@@ -49,20 +96,8 @@ const Home = () => {
         hidden={false}
       />
       <Header />
-      <ScrollView style = {styles.scrollView}>
-        <View>
-          <Image style={styles.content} source={IMAGE_CONTENT} />
-          <View style={styles.txt}>
-            <Text style={styles.txtContent}>{`Luxury`}</Text>
-            <Text style={styles.txtContent}>{` Fashion`}</Text>
-            <Text style={styles.txtContent}>{`& Accessories`}</Text>
-            <View style={styles.txtBottom}>
-              <Text
-                style={styles.txtBottomContent}>{`Explore Collection`}</Text>
-            </View>
-            <Image style={styles.iconBottomContent} source={IC_BOTTOMCONTENT} />
-          </View>
-        </View>
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        <OnBoarding />
         <Text style={styles.txtTitle}>{`New Arrival`}</Text>
         <Image style={styles.border} source={IMAGE_BORDER} />
         <View style={styles.nav}>
@@ -78,22 +113,15 @@ const Home = () => {
           <Image source={IC_NEXT} style={styles.iconNext} />
         </TouchableOpacity>
         <Image style={styles.border} source={IMAGE_BORDER} />
-        {/* <ButtonSubmit/> */}
-        {/* <Footer /> */}
-        <View style={styles.txtBrandCenter}>
-          <View style={styles.brand}>
-            <Text style={styles.txtBrand}>{`PRADA`}</Text>
-            <Text style={styles.txtBrand}>{`BURBERRY`}</Text>
-            <Text style={styles.txtBrand}>{`BOSS`}</Text>
-          </View>
-          <View style={styles.brand1}>
-            <Text style={styles.txtBrand}>{`Cartier`}</Text>
-            <Text style={styles.txtBrand}>{`G U C C I`}</Text>
-            <Text style={styles.txtBrand}>{`TIFFANY & CO.`}</Text>
-          </View>
-        </View>
+        {/* <ButtonSubmit /> */}
+        <FlatList
+          data={Brand}
+          renderItem={Item}
+          keyExtractor={(item, index) => `${item.id} ${index}`}
+          numColumns={3}
+        />
         <Image style={styles.border} source={IMAGE_BORDER} />
-        <Text style={styles.txtTitle}>{`Collections`}</Text>
+        <Text style={styles.txtCollections}>{`Collections`}</Text>
         <Collections />
         <Text style={styles.txtTitle}>{`Just for You`}</Text>
         <View style={styles.just}>
@@ -126,12 +154,12 @@ const Home = () => {
           </View>
           <Image style={styles.border} source={IMAGE_BORDER} />
           <Service />
-          {/* <Image style={styles.shit} source={IMAGE_SHIT} /> */}
+          <Image style={styles.shit} source={IMAGE_SHIT} />
         </View>
         <Text style={styles.txtTitle}>{`Follow Us`}</Text>
         <Image style={styles.shit} source={IMAGE_SHIT} />
         <FollowUs />
-        <Footer/>
+        <Footer />
       </ScrollView>
       {/* <ButtonBuyNow/> */}
       {/* <Cart/> */}
@@ -149,66 +177,39 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: THEMES.LIGHT.PRIMARY_BACKGROUND,
   },
-  scrollView:{
-    marginTop: normalize(10)
-  },
-  content: {
-    width: '100%',
+  scrollView: {
     marginTop: normalize(10),
-  },
-  txt: {
-    position: 'absolute',
-    alignSelf: 'center',
-    justifyContent: 'center',
-    marginTop: '50%',
-  },
-  txtContent: {
-    letterSpacing: 1.5,
-    fontSize: '700',
-    fontStyle: 'italic',
-    fontSize: normalize(40),
-    lineHeight: normalize(44),
-  },
-  txtBottom: {
-    backgroundColor: 'rgba(0, 0, 0, 0.4)',
-    width: '90%',
-    alignSelf: 'center',
-    height: normalize(50),
-    borderRadius: 30,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: '50%',
-  },
-  txtBottomContent: {
-    color: '#FCFCFC',
-    fontWeight: '400',
-    fontSize: normalize(16),
-    lineHeight: normalize(24),
-    fontStyle: 'normal',
-  },
-  iconBottomContent: {
-    alignSelf: 'center',
-    marginTop: normalize(20),
-    width: '20%',
+    flexGrow: 1,
   },
   txtTitle: {
     justifyContent: 'center',
     alignSelf: 'center',
     fontWeight: '400',
     letterSpacing: 8,
-    fontSize: normalize(18),
+    fontSize: fonts.FONT_SIZE_18,
     lineHeight: normalize(40),
     color: '#000',
-    marginTop: normalize(10),
+    marginTop: normalize(-50),
+  },
+  txtCollections: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    fontWeight: '400',
+    letterSpacing: 8,
+    fontSize: fonts.FONT_SIZE_18,
+    lineHeight: normalize(40),
+    color: '#000',
+    marginBottom: normalize(8),
   },
   border: {
     // backgroundColor:'#555555',
     width: '40%',
     height: 10,
     alignSelf: 'center',
-    marginVertical: 12,
+    marginTop: normalize(12),
+    marginBottom: 12,
   },
   nav: {
     flexDirection: 'row',
@@ -236,25 +237,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   brand: {
-    flexDirection: 'row',
-    textAlign: 'center',
-  },
-  brand1: {
-    flexDirection: 'row',
-    textAlign: 'center',
-    alignSelf: 'center',
-  },
-  txtBrand: {
     marginHorizontal: 20,
-    color: '#333',
-    fontWeight: '600',
-    letterSpacing: 2,
-    textAlign: 'center',
-    fontSize: normalize(16),
-    marginVertical: 10,
-  },
-  txtBrandCenter: {
     alignSelf: 'center',
+    alignItems: 'center',
+    marginVertical: 20,
   },
   indicator: {
     alignSelf: 'center',
