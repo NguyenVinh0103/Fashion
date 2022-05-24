@@ -78,7 +78,7 @@ const BlogComp = () => {
           <Image style={styles.icon} source={item.icon} />
           <View style={styles.linearFlex}>
             <LinearGradient
-              colors={['rgba(0, 0, 0, 0.1)', 'rgba(0, 0, 0, 1)']}
+              colors={['rgba(0, 0, 0, 0)','rgba(0, 0, 0, 1)']}
               style={styles.linear}>
               <Text style={styles.txtContent}>{item.content}</Text>
             </LinearGradient>
