@@ -1,0 +1,27 @@
+export const THEMES = {
+  LIGHT: {
+    PRIMARY_BACKGROUND: '#FFFFFF',
+    TEXT_COLOR: '#131212',
+    ICON_INPUT: '#1317DD',
+    BACKGROUND_INPUT: '#FFFFFF',
+    TOGGLE_ON: '#1317DD',
+    TOGGLE_OFF: 'gray',
+    CIRCLE_TOGGLE: '#FFFFFF',
+  },
+  DARK: {
+    PRIMARY_BACKGROUND: '#000000',
+    PRIMARY_BACKGROUNDRGBA:'rgba(0, 0, 0, 0.4)',
+    TEXT_COLOR: '#FFFFFFCC',
+    ICON_INPUT: '#FFFFFF',
+    BACKGROUND_INPUT: '#262626',
+    TOGGLE_ON: '#FFFFFF',
+    TOGGLE_OFF: 'gray',
+    CIRCLE_TOGGLE: '#262626',
+  },
+  PRIMARY: {
+    BLACK_80: '#00000080',
+    BLACK_90: '#00000090',
+    GRAY: '#8e8e93',
+  },
+};
+export default THEMES;
